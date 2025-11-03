@@ -107,4 +107,57 @@ class MainTest {
         assertArrayEquals(resultadoEsperado2, resultadoActual2);
     }
 
+    @Test
+    void movimientoReina() {
+        int[][] resultadoEsperado = {
+                {1, 0, 0, 1, 0, 0, 1, 0},
+                {0, 1, 0, 1, 0, 1, 0, 0},
+                {0, 0, 1, 1, 1, 0, 0, 0},
+                {1, 1, 1, 0, 1, 1, 1, 1},
+                {0, 0, 1, 1, 1, 0, 0, 0},
+                {0, 1, 0, 1, 0, 1, 0, 0},
+                {1, 0, 0, 1, 0, 0, 1, 0},
+                {0, 0, 0, 1, 0, 0, 0, 1}
+        };
+
+        int[][] resultadoActual = Main.movimientoReina(3, 3);
+        assertArrayEquals(resultadoEsperado, resultadoActual);
+    }
+
+    @Test
+    void movimientoRei() {
+        int[][] resultadoEsperado = {
+                {0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 1, 1, 1, 0, 0, 0},
+                {0, 0, 1, 0, 1, 0, 0, 0},
+                {0, 0, 1, 1, 1, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0}
+        };
+
+        int[][] resultadoActual = Main.movimientoRei(3, 3);
+        for (int i = 0; i < resultadoEsperado.length; i++) {
+            assertArrayEquals(resultadoEsperado[i], resultadoActual[i]);
+        }
+
+        int[][] resultadoEsperado2 = {
+                {0, 1, 0, 0, 0, 0, 0, 0},
+                {1, 1, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0}
+        };
+
+        int[][] resultadoActual2 = Main.movimientoRei(0, 0);
+        for (int i = 0; i < resultadoEsperado2.length; i++) {
+            assertArrayEquals(resultadoEsperado2[i], resultadoActual2[i]);
+        }
+    }
+
+
 }
